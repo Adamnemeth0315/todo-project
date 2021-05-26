@@ -1,0 +1,220 @@
+@font-face{
+    font-family: "Cyberverse";
+    src: url(Fonts/Cyberverse.otf);
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Cyberverse", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: #345312;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+}
+
+.gameboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gamerule{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 1.3rem;
+}
+
+.time {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem;
+    min-width: 500px;
+}
+
+.timer {
+    font-size: 2.5rem;
+}
+
+.cardHolder {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    height: 320px;
+    justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 720px){
+    .cardHolder {
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 680px;
+        height: 350px;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.card {
+    display: flex;
+    width: 110px;
+    height: 155px;
+    transition: all 0.9s ease-out;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    margin: .6rem .4rem;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:active {
+    transform: scale(.90);
+}
+
+.card--flip{
+    pointer-events: none;
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.card--flip:hover {
+    cursor: not-allowed;
+}
+
+.noneclick {
+    pointer-events: none;
+}
+
+.flip-front {
+    background-image: url(pictures/cardbackground.jpg);
+    background-position: center;
+    background-size: cover;
+    color: black;
+}
+
+.flip-back {
+    background-position: center;
+    background-size: cover;
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 120px;
+    height: 165px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.toldiCrock {
+    background-image: url(pictures/1.jpg); 
+}
+.pancratorCrock {
+    background-image: url(pictures/2.jpg); 
+}
+.armyCrock {
+    background-image: url(pictures/3.jpg); 
+}
+.jungleCrock {
+    background-image: url(pictures/4.jpg); 
+}
+.armorCrock {
+    background-image: url(pictures/5.jpg); 
+}
+
+
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(30, 30, 30, 0.3); 
+}
+
+.modal__article {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.modal__head {
+    display: flex;
+    justify-content: space-between;
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+}
+
+.modal__content {
+    display: inline-block;
+    text-align: left;
+    background-color: #c3c4c5;
+    border: 1px solid #030303;
+    color: #234325;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 1rem;
+    animation: openModal .3s;
+}
+
+@keyframes openModal {
+    0% {opacity:0;} 
+    100% {opacity:1;}
+}
+
+@media only screen and (min-width: 640px){
+    .modal__content{
+        width: 50vw;
+    }
+}
+
+.modal__close{
+    display: flex;
+    background-color: transparent;
+    color: #a7a7a7;
+    border: transparent;
+    font-size: 1rem;
+}
+
+.modal__close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+@keyframes closeModal {
+    0% {opacity:1;} 
+    100% {opacity:0;}
+}
+
+.modal__up {
+    display: flex;
+}
+
+.modal__hide {
+    display: none;
+    transition: .4s;
+}

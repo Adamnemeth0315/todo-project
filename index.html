@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="body__container">
+
+        <header class="header">
+            <h1>Daily ToDo-List Manager</h1>
+        </header>
+
+        <div class="container">
+            <h3 class="body__day"></h3>
+
+            <h3 class="body__date">2020-12-26</h3>
+
+            <div class="div-container body__todo-insert">
+                <input class="todo__input" type="text" placeholder="Take the garbage out">
+                <button class="todo__btn">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+            <div class="text__div">
+                <p>You have <span class="todo__number">0</span> pending items</p>
+            </div>
+
+            <div class="container chill__box">
+                <i class="fa fa-bed  icon"></i>
+                <span class="chill__text">Time to chill. You have no todos.</span>
+            </div>
+
+            <div class="div-container todo__list--pending">
+
+            </div>
+
+            <p class="text">Completed tasks.</p>
+            <div class="div-container todo__list--done">
+
+            </div>
+
+            <div class="div-container todo__footer">
+                <button class="footer__btn--complete">
+                    <span class="show">Show</span>
+                    <span class="hide">Hide</span>
+                    Complete</button>
+                <button class="footer__btn--clear">Clear all</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script type="module" src="assets/css/js/main.js"></script>
+</body>
+
+</html>
